@@ -25,7 +25,7 @@ class DotaCard extends React.Component {
     <Card.Text>
     Primary Attribute: {this.attribute()}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    {/* <Button variant="primary">Go somewhere</Button> */}
   </Card.Body>
 </Card>
       </div>

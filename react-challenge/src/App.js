@@ -28,7 +28,7 @@ class App extends React.Component {
       })
   }
   list() {
-    if(this.state.isSearch && this.state.isSearch){
+    if(this.state.search && this.state.isSearch){
       return this.state.heroes.filter(elem => {
         return elem.localized_name.toLowerCase().includes(this.state.search.toLowerCase())
       })
@@ -52,10 +52,11 @@ class App extends React.Component {
   }
   render() {
     return <div>
+      <h1>Dota Heroes</h1>
       <div className="p-4">
         <InputGroup className="mb-3">
           <FormControl
-            placeholder="Recipient's username"
+            placeholder="Search"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
             onChange={this.searchOnSubmit.bind(this)}

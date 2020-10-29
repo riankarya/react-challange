@@ -13,7 +13,6 @@ const Home = (props) => {
   const { favorites } = useSelector(state => state)
 
   const list = () => {
-    console.log(favorites);
     if(search){
       return favorites.filter(elem => {
         return elem.localized_name.toLowerCase().includes(search.toLowerCase())
@@ -23,7 +22,6 @@ const Home = (props) => {
       })
     }else{
       return favorites.map(elem => {
-        console.log(elem, 'ASUP TI LIST FAVORITES');
         return <DotaCard img_url={elem.img_url} favorite={true} id={elem.id} role={elem.role} name={elem.localized_name} key={elem.id} primary_attr={elem.primary_attr}/>
       }) 
     }

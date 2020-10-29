@@ -12,7 +12,7 @@ export const fetchHeroes = () => {
     // fetch('https://cors-anywhere.herokuapp.com/https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=8D92899D41E1E20729E91534E04CB0E2')
       .then(response => response.json())
       .then(data => {
-        console.log(data, 'ASUP TI ACTION');
+        (data, 'ASUP TI ACTION');
         dispatch(
           {
             type: FETCH_HEROES,
@@ -32,15 +32,12 @@ export const fetchDetails = (id) => {
       // fetch('https://cors-anywhere.herokuapp.com/https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=8D92899D41E1E20729E91534E04CB0E2')
       .then(response => response.json())
       .then(data => {
-        console.log(data, id, 'ASUP TI THEN USEEFFECT');
-        console.log(data.filter(elem => elem.id == id)[0], 'DATA.FILTER');
         dispatch(
           {
             type: FETCH_DETAIL,
             payload: data.filter(elem => elem.id == id)[0]
           }
         )
-        // setHeroStat(data.filter(elem => elem.id == id)[0])
       })
       .catch(err => {
         console.log(err)

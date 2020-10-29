@@ -23,7 +23,6 @@ const DotaCard = (props) => {
     return props.role.join(', ')
   }
   const addToFav = () => {
-    console.log(props, 'asup ti addtofav');
     dispatch(addToFavorite(props))
   }
   return (

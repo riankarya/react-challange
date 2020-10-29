@@ -1,8 +1,11 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToFavorite } from '../store/action'
 
 const DotaCard = (props) => {
+  const dispatch = useDispatch()
   const history = useHistory()
   const attribute = () => {
     switch (props.primary_attr) {
@@ -19,6 +22,10 @@ const DotaCard = (props) => {
   const role = () => {
     return props.role.join(', ')
   }
+  const addToFav = () => {
+    console.log(props, 'asup ti addtofav');
+    dispatch(addToFavorite(props))
+  }
   return (
       <div>
         <Card style={{ width: '18rem' }}>
@@ -33,6 +40,11 @@ const DotaCard = (props) => {
             Role: {role()}
             </Card.Text>
             <Button onClick={() => history.push(`/detail/${props.id}`)} variant="primary">Details</Button>
+            {!props.favorite ?
+            <Button onClick={() => addToFav()} variant="primary">Add to Favorites</Button>
+            :
+            <></>
+            }
           </Card.Body>
         </Card>
       </div>

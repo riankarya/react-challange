@@ -1,0 +1,3 @@
+export const FETCH_HEROES = 'FETCH_HEROES'
+export const FETCH_DETAIL = 'FETCH_DETAIL'
+export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE'

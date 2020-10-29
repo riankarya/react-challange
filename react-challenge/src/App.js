@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./views/home";
 import Detail from "./views/detail";
+import Favorites from "./views/favorites";
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
         <Switch>
           <Route path="/detail/:id">
             <Detail />
+          </Route>
+          <Route exact path="/favorites">
+            <Favorites />
           </Route>
           <Route exact path="/">
             <Home />
